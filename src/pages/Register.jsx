@@ -7,19 +7,16 @@ const Register = () => {
   const [password, setPassword] = useState("");
 
   useEffect(() => {
-    // Attach event listener when the component mounts
     const handleBeforeUnload = () => {
-      // Cleanup: Remove stored data from localStorage
       localStorage.removeItem("userEmail");
     };
 
     window.addEventListener("beforeunload", handleBeforeUnload);
 
-    // Detach event listener when the component unmounts
     return () => {
       window.removeEventListener("beforeunload", handleBeforeUnload);
     };
-  }, []); // Empty dependency array ensures the effect runs only once on mount
+  }, []);
 
   const isEmailValid = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -39,10 +36,8 @@ const Register = () => {
       return;
     }
 
-    // Assuming both email and password are valid, store in localStorage
     localStorage.setItem("userEmail", email);
 
-    // Redirect to the homepage
     navigate("/main");
   };
 

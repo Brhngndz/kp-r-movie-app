@@ -4,7 +4,6 @@ import Switch from "./Switch";
 
 const Navbar = () => {
   const handleLogout = () => {
-    // Clear localStorage data for this site
     localStorage.removeItem("userEmail");
   };
 
@@ -19,7 +18,6 @@ const Navbar = () => {
             Movie App
           </Link>
 
-          {/* Right elements */}
           <div className="relative flex items-center">
             <Switch />
             <div className="relative" data-te-dropdown-ref="">
@@ -34,7 +32,6 @@ const Navbar = () => {
               </Link>
             </div>
           </div>
-          {/* Right elements */}
         </div>
       </nav>
       <div className="h-[52px]"></div>
